@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LV1</string>
+    <string name="hintIme">Unesite svoje ime..</string>
+    <string name="hintPredmet">Unesite naziv predmeta..</string>
+    <string name="btnUnos">Unos</string>
+
+</resources>
