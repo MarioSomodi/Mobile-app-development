@@ -1,13 +1,11 @@
 package com.example.lv1;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import com.google.android.material.textfield.TextInputEditText;
 
 public class SummaryActivity extends AppCompatActivity {
 
@@ -28,11 +26,14 @@ public class SummaryActivity extends AppCompatActivity {
             tvIme.setText(extras.getString("ime"));
             tvPredmet.setText(extras.getString("predmet"));
         }
-        btnPovratak.setOnClickListener(v ->{
-            Intent i = new Intent(SummaryActivity.this, PersonalInfoActivity.class);
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(i);
-            finish();
+        btnPovratak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(SummaryActivity.this, PersonalInfoActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(i);
+                finish();
+            }
         });
 
     }
