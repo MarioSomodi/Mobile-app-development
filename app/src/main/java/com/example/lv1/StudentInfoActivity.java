@@ -1,12 +1,13 @@
 package com.example.lv1;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
-
 import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.Objects;
 
 public class StudentInfoActivity extends AppCompatActivity {
 
@@ -20,14 +21,17 @@ public class StudentInfoActivity extends AppCompatActivity {
 
         btnUnosPredmet = (Button) findViewById(R.id.btnUnosPredmet);
         etPredmet = (TextInputEditText) findViewById(R.id.etPredmet);
-        btnUnosPredmet.setOnClickListener(v -> {
-            Intent i = new Intent(StudentInfoActivity.this, SummaryActivity.class);
-            i.putExtra("predmet", etPredmet.getText() != null ? etPredmet.getText().toString() : "");
-            Bundle extras = getIntent().getExtras();
-            if (extras != null) {
-                i.putExtra("ime", extras.getString("ime"));
+        btnUnosPredmet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(StudentInfoActivity.this, SummaryActivity.class);
+                i.putExtra("predmet", etPredmet.getText() != null ? etPredmet.getText().toString() : "");
+                Bundle extras = getIntent().getExtras();
+                if (extras != null) {
+                    i.putExtra("ime", extras.getString("ime"));
+                }
+                startActivity(i);
             }
-            startActivity(i);
         });
     }
 }

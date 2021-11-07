@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black"
-    tools:context=".PersonalInfoActivity">
-
-    <TextView
+    tools:context=".PersonalInfoActivity"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/tvIme"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        />
-    <TextView
         android:id="@+id/tvPredmet"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/tvIme"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/tvIme"
+        android:text="@string/btnPovratak"
         android:textColor="@color/white"
-        android:textSize="25sp"
-        />
-    <Button
+        android:layout_marginHorizontal="30dp"
+        app:layout_constraintTop_toBottomOf="@id/tvPredmet"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/btnPovratak"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btnUnos"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:layout_centerHorizontal="true"
         />
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

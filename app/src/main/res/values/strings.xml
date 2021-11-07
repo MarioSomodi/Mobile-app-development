@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">LV1</string>
-    <string name="hintIme">Unesite svoje ime..</string>
-    <string name="hintPredmet">Unesite naziv predmeta..</string>
     <string name="btnUnos">Unos</string>
-
+    <string name="btnPovratak">Povratak</string>
+    <string name="placeholderIme">Unesite svoje ime...</string>
+    <string name="placeholderPredmet">Unesite naziv predmeta...</string>
 </resources>
