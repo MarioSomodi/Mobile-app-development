@@ -13,6 +13,8 @@ public class PersonalInfoActivity extends AppCompatActivity {
 
     private Button btnUnosIme;
     private TextInputEditText etIme;
+    private TextInputEditText etPrezime;
+    private TextInputEditText etDatumRod;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +23,15 @@ public class PersonalInfoActivity extends AppCompatActivity {
 
         btnUnosIme = (Button) findViewById(R.id.btnUnosIme);
         etIme = (TextInputEditText) findViewById(R.id.etIme);
+        etPrezime = (TextInputEditText) findViewById(R.id.etPrezime);
+        etDatumRod = (TextInputEditText) findViewById(R.id.etDatumR);
         btnUnosIme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(PersonalInfoActivity.this, StudentInfoActivity.class);
                 i.putExtra("ime", etIme.getText() != null ? etIme.getText().toString() : "");
+                i.putExtra("prezime", etPrezime.getText() != null ? etPrezime.getText().toString() : "");
+                i.putExtra("datumRod", etDatumRod.getText() != null ? etDatumRod.getText().toString() : "");
                 startActivity(i);
             }
         });
