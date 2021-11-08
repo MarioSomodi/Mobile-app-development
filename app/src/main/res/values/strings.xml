@@ -1,7 +1,14 @@
 <resources>
     <string name="app_name">LV1</string>
-    <string name="btnUnos">Unos</string>
+    <string name="btnUnos">Dalje</string>
     <string name="btnPovratak">Povratak</string>
-    <string name="placeholderIme">Unesite svoje ime...</string>
-    <string name="placeholderPredmet">Unesite naziv predmeta...</string>
+    <string name="placeholderIme">Unos ime...</string>
+    <string name="placeholderPrezime">Unos prezime...</string>
+    <string name="placeholderPredmet">Unos predmet...</string>
+    <string name="placeholderDatumR">Unos datum rod...</string>
+    <string name="placeholderProf">Profesor...</string>
+    <string name="placeholderAkGod">Akademska god ...</string>
+    <string name="placeholderLVH">Sati lv...</string>
+    <string name="placeholderPH">Sati pred...</string>
+    <string name="textvDatum">Datum rodenja</string>
 </resources>
