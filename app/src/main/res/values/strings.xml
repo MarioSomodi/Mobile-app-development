@@ -11,4 +11,7 @@
     <string name="placeholderLVH">Sati lv...</string>
     <string name="placeholderPH">Sati pred...</string>
     <string name="textvDatum">Datum rodenja</string>
+    <string name="headerStudent">Studenti</string>
+    <string name="btnDodajStudent">Novi student</string>
+    <string name="btnDodaj">Dodaj</string>
 </resources>
