@@ -1,5 +1,7 @@
 package com.example.lv1.models;
 
+import com.example.lv1.viewModels.StudentVM;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,8 +17,7 @@ public class Storage {
         }
         return instance;
     }
-
-    public void addStudent(Student student){
+    public void addStudent(StudentVM student){
         this.dataList.add(student);
     }
     public List<Object> getStudents(){

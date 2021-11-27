@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lv1.R;
-import com.example.lv1.models.Student;
+import com.example.lv1.viewModels.StudentVM;
 
 import java.util.List;
 
@@ -41,15 +41,15 @@ public class StudentRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position){
         if(getItemViewType(position) == STUDENT){
             StudentViewHolder studentViewHolder = (StudentViewHolder) viewHolder;
-            Student student = (Student) dataList.get(position);
+            StudentVM student = (StudentVM) dataList.get(position);
             studentViewHolder.tvName.setText(
-                    ((Student) dataList.get(position)).getName()
+                    ((StudentVM) dataList.get(position)).getName()
             );
             studentViewHolder.tvSurname.setText(
-                    ((Student) dataList.get(position)).getSurname()
+                    ((StudentVM) dataList.get(position)).getSurname()
             );
             studentViewHolder.tvSubject.setText(
-                    ((Student) dataList.get(position)).getSubject()
+                    ((StudentVM) dataList.get(position)).getSubject()
             );
         }else{
             HeaderViewHolder headerViewHolder = (HeaderViewHolder) viewHolder;
@@ -64,7 +64,7 @@ public class StudentRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
     @Override
     public int getItemViewType(int position) {
-        if(dataList.get(position) instanceof Student){
+        if(dataList.get(position) instanceof StudentVM){
             return STUDENT;
         }else{
             return HEADER;
