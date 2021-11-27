@@ -1,17 +1,15 @@
-<resources>
-    <string name="app_name">LV1</string>
-    <string name="btnUnos">Dalje</string>
-    <string name="btnPovratak">Povratak</string>
-    <string name="placeholderIme">Unos ime...</string>
-    <string name="placeholderPrezime">Unos prezime...</string>
-    <string name="placeholderPredmet">Unos predmet...</string>
-    <string name="placeholderDatumR">Unos datum rod...</string>
-    <string name="placeholderProf">Profesor...</string>
-    <string name="placeholderAkGod">Akademska god ...</string>
-    <string name="placeholderLVH">Sati lv...</string>
-    <string name="placeholderPH">Sati pred...</string>
-    <string name="textvDatum">Datum rodenja</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">PMA</string>
+    <string name="btnHome">Početna</string>
+    <string name="placeholderName">Ime</string>
+    <string name="placeholderSurname">Prezime</string>
+    <string name="placeholderSubject">Predmet</string>
+    <string name="placeholderBirthday">Datum rođenja</string>
+    <string name="placeholderProfessor" tools:ignore="Typos">Profesor</string>
+    <string name="placeholderAcademicYear">Akademska god</string>
+    <string name="placeholderLabHours">Sati lv</string>
+    <string name="placeholderLectureHours">Sati pred</string>
+    <string name="labelBirthday">Datum rođenja</string>
     <string name="headerStudent">Studenti</string>
-    <string name="btnDodajStudent">Novi student</string>
-    <string name="btnDodaj">Dodaj</string>
+    <string name="btnAddStudent">Novi student</string>
 </resources>
