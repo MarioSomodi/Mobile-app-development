@@ -12,4 +12,10 @@
     <string name="labelBirthday">Datum rođenja</string>
     <string name="headerStudent">Studenti</string>
     <string name="btnAddStudent">Novi student</string>
+    <string name="btnOpenCamera">Otvori kameru</string>
+    <string name="btnGallery">Otvori galeriju</string>
+    <string name="tvChangeImage">Promjeni zadanu sliku</string>
+    <string name="btnDefault">Vrati zadanu sliku</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -10,9 +10,11 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.lv1.R;
 import com.example.lv1.models.Course;
+import com.example.lv1.models.Storage;
 import com.example.lv1.viewModels.SummaryViewModel;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -22,6 +24,7 @@ public class StudentInfoFragment extends Fragment {
     private TextInputEditText etProfessor;
     private TextInputEditText etAcademicYear;
     private TextInputEditText etLabHours;
+    private ImageView imgView2;
     private TextInputEditText etLectureHours;
     private SummaryViewModel viewModelSummary;
 
@@ -42,8 +45,18 @@ public class StudentInfoFragment extends Fragment {
         etSubject = (TextInputEditText) v.findViewById(R.id.etSubject);
         etProfessor = (TextInputEditText) v.findViewById(R.id.etProfessor);
         etAcademicYear = (TextInputEditText) v.findViewById(R.id.etAcademicYear);
+        imgView2 = v.findViewById(R.id.imgView2);
         etLabHours = (TextInputEditText) v.findViewById(R.id.etLabHours);
         etLectureHours = (TextInputEditText) v.findViewById(R.id.etLectureHours);
+        Storage StorageSingleton = Storage.getInstance();
+        viewModelSummary.profileImage.observe(getViewLifecycleOwner(), list -> {
+            imgView2.setImageBitmap(viewModelSummary.profileImage.getValue());
+            if(viewModelSummary.rotation.getValue().booleanValue()){
+                imgView2.setRotation(90);
+            }else{
+                imgView2.setRotation(0);
+            }
+        });
 
         etSubject.addTextChangedListener(new TextChange(etSubject));
         etProfessor.addTextChangedListener(new TextChange(etProfessor));
