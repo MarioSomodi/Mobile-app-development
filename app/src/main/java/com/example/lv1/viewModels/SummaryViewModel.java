@@ -1,6 +1,8 @@
 package com.example.lv1.viewModels;
 
 import android.content.ClipData;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.util.Pair;
 
@@ -8,8 +10,10 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.lv1.R;
 import com.example.lv1.fragments.SummaryFragment;
 import com.example.lv1.models.Course;
+import com.example.lv1.models.Storage;
 import com.example.lv1.models.Student;
 
 import java.util.List;
@@ -19,6 +23,8 @@ public class SummaryViewModel extends ViewModel {
     public MutableLiveData<Integer> change = new MutableLiveData<>();
     private MutableLiveData<Student> student = new MutableLiveData<>();
     private MutableLiveData<Course> course = new MutableLiveData<>();
+    public MutableLiveData<Bitmap> profileImage = new MutableLiveData<>();
+    public MutableLiveData<Boolean> rotation = new MutableLiveData<>();
 
     public SummaryViewModel(){
         Student s = new Student();
@@ -40,6 +46,11 @@ public class SummaryViewModel extends ViewModel {
         student.setValue(studentObj);
         change.setValue(1);
     }
+    public void setProfileImage(Bitmap img, boolean rot){
+        rotation.setValue(rot);
+        profileImage.setValue(img);
+    }
+
     public void setCourseProperty(String value, int propertyIndex) {
         Course courseObj = course.getValue();
         if(propertyIndex == 1){

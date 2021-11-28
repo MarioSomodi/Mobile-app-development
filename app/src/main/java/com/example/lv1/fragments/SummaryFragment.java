@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.lv1.CreateNewRecordActivity;
@@ -29,6 +30,7 @@ public class SummaryFragment extends Fragment {
     private TextView tvSurname;
     private TextView tvProfessor;
     private TextView tvAcademicYear;
+    private ImageView imgView3;
     private TextView tvBirthday;
     private TextView tvLabHours;
     private TextView tvLectureHours;
@@ -52,11 +54,20 @@ public class SummaryFragment extends Fragment {
         tvName = (TextView) v.findViewById(R.id.tvName);
         tvSubject = (TextView) v.findViewById(R.id.tvSubject);
         tvSurname = (TextView) v.findViewById(R.id.tvSurname);
+        imgView3 = v.findViewById(R.id.imgView3);
         tvProfessor = (TextView) v.findViewById(R.id.tvProfessor);
         tvAcademicYear = (TextView) v.findViewById(R.id.tvAcademicYear);
         tvBirthday = (TextView) v.findViewById(R.id.tvBirthday);
         tvLabHours = (TextView) v.findViewById(R.id.tvLabHours);
         tvLectureHours = (TextView) v.findViewById(R.id.tvLectureHours);
+        viewModelSummary.profileImage.observe(getViewLifecycleOwner(), list -> {
+            imgView3.setImageBitmap(viewModelSummary.profileImage.getValue());
+            if(viewModelSummary.rotation.getValue().booleanValue()){
+                imgView3.setRotation(90);
+            }else{
+                imgView3.setRotation(0);
+            }
+        });
         viewModelSummary.change.observe(getViewLifecycleOwner(), list -> {
             Student student = null;
             Course course = null;
